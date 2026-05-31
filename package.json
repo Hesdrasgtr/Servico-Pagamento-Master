@@ -1,0 +1,11 @@
+{
+  "name": "servico-pagamento",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^11.0.0"
+  }
+}
