@@ -1,11 +1,19 @@
 {
   "name": "servico-pagamento",
   "version": "1.0.0",
-  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "test": "mocha"
   },
-  "devDependencies": {
-    "mocha": "^11.0.0"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "mocha": "^11.7.5"
   }
 }
