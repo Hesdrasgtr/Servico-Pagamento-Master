@@ -28,9 +28,7 @@ jobs:
 
       - name: Executar testes
         run: npm test && echo "Testes executados com sucesso" > relatorio-testes.txt
-          
-                   
-
+                
       - name: Publicar relatório
         uses: actions/upload-artifact@v4
         with:
