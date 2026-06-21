@@ -1,3 +1,48 @@
+### Serviço de Pagamento
+Projeto em Node.js com testes automatizados.
+
+## Testes
+Há 3 casos de teste em test/servicoPagamento.test.js:
+
+(1) Pagamento com categoria cara
+(2) Pagamento com categoria padrao
+(3) Consulta do último pagamento
+
+## Como rodar localmente
+
+npm ci
+npm test
+npm run test:report
+
+## Relatórios gerados:
+
+- reports/mochawesome-report.html
+- reports/mochawesome-report.json
+
+## CI (Continuous Integration)
+
+A pipeline de Integração Contínua é definida no arquivo `.github/workflows/ci.yml` e é executada pelo GitHub Actions.
+
+O workflow é configurado para ser acionado automaticamente em eventos de `push` para a branch principal do projeto, além de permitir execução manual por meio do evento `workflow_dispatch` e execução periódica utilizando `schedule`.
+
+Durante a execução, a pipeline realiza as seguintes etapas:
+
+1. Checkout do código-fonte do repositório.
+2. Configuração do ambiente de execução com Node.js.
+3. Instalação determinística das dependências utilizando o comando `npm ci`.
+4. Execução dos testes automatizados por meio do comando `npm run test:report`.
+5. Geração dos relatórios de testes na pasta `reports/`.
+6. Validação da existência dos artefatos produzidos.
+7. Publicação dos relatórios como artifacts do GitHub Actions, permitindo armazenamento, rastreabilidade e download dos resultados das execuções.
+
+Dessa forma, a pipeline implementa os princípios de Integração Contínua (CI), garantindo a validação automática do código, a execução recorrente dos testes e a disponibilização dos relatórios produzidos em cada execução.
+
+## Conteúdo do repositório
+- src/servicoDePagamento.js - implementação do serviço
+- test/servicoDePagamento.test.js - testes automatizados
+- .github/workflows/ci.yml - pipeline de CI
+- reports/ - relatórios de testes gerados localmente ou em CI
+
 ## Conceitos Utilizados
 
 ### Integração Contínua (CI)
@@ -15,9 +60,7 @@ Os testes foram implementados utilizando Mocha e são executados automaticamente
 ### Artifact
 
 Após a execução dos testes, é gerado um arquivo de relatório que é armazenado na execução da pipeline por meio de artifacts do GitHub Actions.
-
-# Serviço de Pagamento
-
+NPM TEST
 ## Objetivo
 
 Projeto desenvolvido para demonstrar a utilização de GitHub Actions em uma pipeline de Integração Contínua.

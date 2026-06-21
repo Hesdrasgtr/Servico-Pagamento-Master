@@ -1,0 +1,138 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-21T20:50:39.813Z",
+    "end": "2026-06-21T20:50:39.821Z",
+    "duration": 8,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7be7acf9-53de-4bbe-a0c6-490976f73561",
+      "title": "",
+      "fullFile": "C:\\Users\\hesdr\\Documents\\Projects\\SERVICO_PAGAMENTO_MASTER\\test\\ServicoDePagamento.test.js",
+      "file": "\\test\\ServicoDePagamento.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a204c8b4-c5a5-41be-93bc-279b3a5fdc4a",
+          "title": "Serviço de Pagamento",
+          "fullFile": "C:\\Users\\hesdr\\Documents\\Projects\\SERVICO_PAGAMENTO_MASTER\\test\\ServicoDePagamento.test.js",
+          "file": "\\test\\ServicoDePagamento.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve classificar pagamento como cara quando valor for maior que 100",
+              "fullTitle": "Serviço de Pagamento Deve classificar pagamento como cara quando valor for maior que 100",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Instancia o serviço de pagamento\n        const servico = new ServicoDePagamento();\n        // Realiza um pagamento acima de 100 reais\n        servico.pagar(\n            '0987-7656-3475',\n            'Samar',\n            156.87\n        );\n        // Consulta o último pagamento realizado\n        const ultimoPagamento =\n            servico.consultarUltimoPagamento();\n        // Verifica se a categoria foi definida como \"cara\"\n        assert.equal(\n            ultimoPagamento.categoria,\n            'cara'\n        );",
+              "err": {},
+              "uuid": "f40889ea-0f4b-4ed3-b134-b8fba62e00ec",
+              "parentUUID": "a204c8b4-c5a5-41be-93bc-279b3a5fdc4a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve classificar pagamento como padrão quando valor for menor ou igual a 100",
+              "fullTitle": "Serviço de Pagamento Deve classificar pagamento como padrão quando valor for menor ou igual a 100",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Instancia o serviço de pagamento\n        const servico = new ServicoDePagamento();\n        // Realiza um pagamento abaixo de 100 reais\n        servico.pagar(\n            '1111-2222-3333',\n            'Neoenergia',\n            99.99\n        );\n        // Consulta o último pagamento realizado\n        const ultimoPagamento =\n            servico.consultarUltimoPagamento();\n        // Verifica se a categoria foi definida como \"padrão\"\n        assert.equal(\n            ultimoPagamento.categoria,\n            'padrão'\n        );",
+              "err": {},
+              "uuid": "864a2886-df4f-4311-a338-7a34df6d81f2",
+              "parentUUID": "a204c8b4-c5a5-41be-93bc-279b3a5fdc4a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve retornar o último pagamento realizado",
+              "fullTitle": "Serviço de Pagamento Deve retornar o último pagamento realizado",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Instancia o serviço de pagamento\n        const servico = new ServicoDePagamento();\n        // Primeiro pagamento\n        servico.pagar(\n            '111',\n            'Empresa A',\n            50\n        );\n        // Segundo pagamento\n        servico.pagar(\n            '222',\n            'Empresa B',\n            150\n        );\n        // Consulta o último pagamento da lista\n        const ultimoPagamento =\n            servico.consultarUltimoPagamento();\n        // Verifica se os dados retornados pertencem ao segundo pagamento\n        assert.equal(\n            ultimoPagamento.codigoBarras,\n            '222'\n        );\n        assert.equal(\n            ultimoPagamento.empresa,\n            'Empresa B'\n        );\n        assert.equal(\n            ultimoPagamento.valor,\n            150\n        );\n        // Verifica se a categoria foi definida corretamente\n        assert.equal(\n            ultimoPagamento.categoria,\n            'cara'\n        );",
+              "err": {},
+              "uuid": "bba19460-a894-4360-a12f-775863f198f3",
+              "parentUUID": "a204c8b4-c5a5-41be-93bc-279b3a5fdc4a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f40889ea-0f4b-4ed3-b134-b8fba62e00ec",
+            "864a2886-df4f-4311-a338-7a34df6d81f2",
+            "bba19460-a894-4360-a12f-775863f198f3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.6"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}
