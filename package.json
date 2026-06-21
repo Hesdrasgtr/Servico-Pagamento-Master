@@ -7,8 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "npx mocha",
-    "test:report": "npx mocha --reporter mochawesome"
+    "test": "node ./node_modules/mocha/bin/mocha.js",
+    "test:report": "node ./node_modules/mocha/bin/mocha.js --reporter mochawesome"
   },
   "keywords": [],
   "author": "",
