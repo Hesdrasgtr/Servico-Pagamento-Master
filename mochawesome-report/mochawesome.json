@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2026-06-21T20:50:39.813Z",
-    "end": "2026-06-21T20:50:39.821Z",
-    "duration": 8,
+    "start": "2026-06-21T21:12:28.864Z",
+    "end": "2026-06-21T21:12:28.870Z",
+    "duration": 6,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "7be7acf9-53de-4bbe-a0c6-490976f73561",
+      "uuid": "8cad9715-8c20-481c-8337-966cdebc677f",
       "title": "",
       "fullFile": "C:\\Users\\hesdr\\Documents\\Projects\\SERVICO_PAGAMENTO_MASTER\\test\\ServicoDePagamento.test.js",
       "file": "\\test\\ServicoDePagamento.test.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a204c8b4-c5a5-41be-93bc-279b3a5fdc4a",
+          "uuid": "7e587e5c-eed5-46d6-8402-32d8facba509",
           "title": "Serviço de Pagamento",
           "fullFile": "C:\\Users\\hesdr\\Documents\\Projects\\SERVICO_PAGAMENTO_MASTER\\test\\ServicoDePagamento.test.js",
           "file": "\\test\\ServicoDePagamento.test.js",
@@ -47,8 +47,8 @@
               "context": null,
               "code": "// Instancia o serviço de pagamento\n        const servico = new ServicoDePagamento();\n        // Realiza um pagamento acima de 100 reais\n        servico.pagar(\n            '0987-7656-3475',\n            'Samar',\n            156.87\n        );\n        // Consulta o último pagamento realizado\n        const ultimoPagamento =\n            servico.consultarUltimoPagamento();\n        // Verifica se a categoria foi definida como \"cara\"\n        assert.equal(\n            ultimoPagamento.categoria,\n            'cara'\n        );",
               "err": {},
-              "uuid": "f40889ea-0f4b-4ed3-b134-b8fba62e00ec",
-              "parentUUID": "a204c8b4-c5a5-41be-93bc-279b3a5fdc4a",
+              "uuid": "c4f5ba72-154b-405a-be77-b86cae42b7b7",
+              "parentUUID": "7e587e5c-eed5-46d6-8402-32d8facba509",
               "isHook": false,
               "skipped": false
             },
@@ -65,8 +65,8 @@
               "context": null,
               "code": "// Instancia o serviço de pagamento\n        const servico = new ServicoDePagamento();\n        // Realiza um pagamento abaixo de 100 reais\n        servico.pagar(\n            '1111-2222-3333',\n            'Neoenergia',\n            99.99\n        );\n        // Consulta o último pagamento realizado\n        const ultimoPagamento =\n            servico.consultarUltimoPagamento();\n        // Verifica se a categoria foi definida como \"padrão\"\n        assert.equal(\n            ultimoPagamento.categoria,\n            'padrão'\n        );",
               "err": {},
-              "uuid": "864a2886-df4f-4311-a338-7a34df6d81f2",
-              "parentUUID": "a204c8b4-c5a5-41be-93bc-279b3a5fdc4a",
+              "uuid": "5e3b7c6b-1d93-4ddd-b3f8-854a2f26f662",
+              "parentUUID": "7e587e5c-eed5-46d6-8402-32d8facba509",
               "isHook": false,
               "skipped": false
             },
@@ -83,17 +83,17 @@
               "context": null,
               "code": "// Instancia o serviço de pagamento\n        const servico = new ServicoDePagamento();\n        // Primeiro pagamento\n        servico.pagar(\n            '111',\n            'Empresa A',\n            50\n        );\n        // Segundo pagamento\n        servico.pagar(\n            '222',\n            'Empresa B',\n            150\n        );\n        // Consulta o último pagamento da lista\n        const ultimoPagamento =\n            servico.consultarUltimoPagamento();\n        // Verifica se os dados retornados pertencem ao segundo pagamento\n        assert.equal(\n            ultimoPagamento.codigoBarras,\n            '222'\n        );\n        assert.equal(\n            ultimoPagamento.empresa,\n            'Empresa B'\n        );\n        assert.equal(\n            ultimoPagamento.valor,\n            150\n        );\n        // Verifica se a categoria foi definida corretamente\n        assert.equal(\n            ultimoPagamento.categoria,\n            'cara'\n        );",
               "err": {},
-              "uuid": "bba19460-a894-4360-a12f-775863f198f3",
-              "parentUUID": "a204c8b4-c5a5-41be-93bc-279b3a5fdc4a",
+              "uuid": "7c314cba-e268-4b58-a6c1-87f0b33169fa",
+              "parentUUID": "7e587e5c-eed5-46d6-8402-32d8facba509",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "f40889ea-0f4b-4ed3-b134-b8fba62e00ec",
-            "864a2886-df4f-4311-a338-7a34df6d81f2",
-            "bba19460-a894-4360-a12f-775863f198f3"
+            "c4f5ba72-154b-405a-be77-b86cae42b7b7",
+            "5e3b7c6b-1d93-4ddd-b3f8-854a2f26f662",
+            "7c314cba-e268-4b58-a6c1-87f0b33169fa"
           ],
           "failures": [],
           "pending": [],
