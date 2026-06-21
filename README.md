@@ -65,3 +65,6 @@ npm test
 4. Execução dos testes
 5. Geração do relatório
 6. Publicação do relatório
+
+Teste execução por push
+Commit xxxxx pushed by Hesdrasgtr
