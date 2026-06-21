@@ -26,9 +26,14 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
-      - name: Executar testes
+      - name: Executar testes e gerar relatório
         run: npm run test:report
-                
+
+      - name: Verificar arquivos gerados
+        run: |
+          ls -R mochawesome-report
+          find mochawesome-report -type f
+
       - name: Publicar relatório
         uses: actions/upload-artifact@v4
         with:

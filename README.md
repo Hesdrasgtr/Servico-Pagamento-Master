@@ -21,7 +21,9 @@ Implementar uma pipeline de Integração Contínua capaz de:
 ## Estrutura do Projeto
 src/
 test/
-.github/workflows/
+.github/
+└── workflows/
+    └── ci.yml 
 mochawesome-report/
 README.md
 
@@ -37,17 +39,17 @@ Arquivo:
 
 ## Execução Local
 Instalação das dependências:
-
-Execução dos testes:
 ```bash
 npm ci
+```
+## Execução dos testes:
+```bash
 npm test
+```
+## Execução dos testes com geração dos relatórios:
+```bash
 npm run test:report
 ```
-
-Execução dos testes com geração dos relatórios:
-npm run test:report
-
 ## Relatórios gerados:
 Após a execução dos testes, são produzidos os seguintes arquivos:
 
