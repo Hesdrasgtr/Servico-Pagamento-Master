@@ -52,6 +52,7 @@ npm run test:report
 Após a execução dos testes, são produzidos os seguintes arquivos:
 
 `mochawesome-report/mochawesome.html`
+
 `mochawesome-report/mochawesome.json`
 
 Esses relatórios podem ser gerados tanto localmente quanto durante a execução da pipeline no GitHub Actions.
