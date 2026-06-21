@@ -12,7 +12,7 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
-  testes:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -38,7 +38,7 @@ jobs:
       - name: Publicar relatório
         uses: actions/upload-artifact@v4
         with:
-          name: test-report
+          name: mochawesome-report
           path: |
             mochawesome-report/mochawesome.html
             mochawesome-report/mochawesome.json
