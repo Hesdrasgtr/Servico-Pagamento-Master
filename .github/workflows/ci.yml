@@ -1,14 +1,15 @@
-name: Pipeline CI
+name: CI
 
 on:
   push:
     branches:
       - main
+      - master
 
   workflow_dispatch:
 
   schedule:
-    - cron: '0 12 * * 1'
+    - cron: '0 0 * * *'
 
 jobs:
   testes:
@@ -32,12 +33,12 @@ jobs:
       - name: Verificar arquivos gerados
         run: |
           ls -R mochawesome-report
-          find mochawesome-report -type f
+          find mochawesome-report -type f | sort
 
       - name: Publicar relatório
         uses: actions/upload-artifact@v4
         with:
-          name: relatorio-testes
+          name: test-report
           path: |
             mochawesome-report/mochawesome.html
             mochawesome-report/mochawesome.json
