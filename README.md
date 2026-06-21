@@ -1,113 +1,120 @@
 ### Serviço de Pagamento
-Projeto em Node.js com testes automatizados.
+Projeto desenvolvido em Node.js para demonstrar a implementação de uma pipeline de Integração Contínua (CI) utilizando GitHub Actions, com execução automatizada de testes e geração de relatórios
 
-## Testes
-Há 3 casos de teste em test/servicoPagamento.test.js:
+## Objetivo
+Implementar uma pipeline de Integração Contínua capaz de:
+- Executar automaticamente a cada alteração enviada ao repositório;
+- Permitir execução manual;
+- Possibilitar execução agendada;
+- Executar testes automatizados;
+- Gerar relatórios de testes;
+- Armazenar os relatórios produzidos como artifacts da pipeline.
 
-(1) Pagamento com categoria cara
-(2) Pagamento com categoria padrao
-(3) Consulta do último pagamento
+## Tecnologias Utilizadas
+- JavaScript
+- Node.js
+- Mocha
+- Mochawesome
+- Node Assert
+- GitHub Actions
 
-## Como rodar localmente
+## Estrutura do Projeto
+src/
+test/
+.github/workflows/
+mochawesome-report/
+README.md
 
-npm ci
+## Casos de Teste
+Arquivo:
+
+test/ServicoDePagamento.test.js
+
+# Os cenários testados são:
+1. Classificação de pagamento como categoria "cara".
+2. Classificação de pagamento como categoria "padrão".
+3. Consulta do último pagamento realizado.
+
+## Execução Local
+Instalação das dependências:
+
+Execução dos testes:
 npm test
+npm ci
+npm run test:report
+
+Execução dos testes com geração dos relatórios:
 npm run test:report
 
 ## Relatórios gerados:
+Após a execução dos testes, são produzidos os seguintes arquivos:
 
 - reports/mochawesome-report.html
 - reports/mochawesome-report.json
 
-## CI (Continuous Integration)
+Esses relatórios podem ser gerados tanto localmente quanto durante a execução da pipeline no GitHub Actions.
 
-A pipeline de Integração Contínua é definida no arquivo `.github/workflows/ci.yml` e é executada pelo GitHub Actions.
+## Pipeline de Integração Contínua
+A pipeline está definida em:
 
-O workflow é configurado para ser acionado automaticamente em eventos de `push` para a branch principal do projeto, além de permitir execução manual por meio do evento `workflow_dispatch` e execução periódica utilizando `schedule`.
+.github/workflows/ci.yml
 
-Durante a execução, a pipeline realiza as seguintes etapas:
+# O workflow é acionado pelos seguintes eventos:
+- Push para a branch principal;
+- Execução manual (workflow_dispatch);
+- Execução agendada (schedule).
 
-1. Checkout do código-fonte do repositório.
-2. Configuração do ambiente de execução com Node.js.
-3. Instalação determinística das dependências utilizando o comando `npm ci`.
-4. Execução dos testes automatizados por meio do comando `npm run test:report`.
-5. Geração dos relatórios de testes na pasta `reports/`.
-6. Validação da existência dos artefatos produzidos.
-7. Publicação dos relatórios como artifacts do GitHub Actions, permitindo armazenamento, rastreabilidade e download dos resultados das execuções.
+# Durante sua execução, a pipeline realiza:
+1. Checkout do código-fonte.
+2. Configuração do ambiente Node.js.
+3. Instalação das dependências utilizando npm ci.
+4. Execução dos testes automatizados.
+5. Geração dos relatórios HTML e JSON.
+6. Armazenamento dos relatórios como artifacts da execução.
 
-Dessa forma, a pipeline implementa os princípios de Integração Contínua (CI), garantindo a validação automática do código, a execução recorrente dos testes e a disponibilização dos relatórios produzidos em cada execução.
-
-## Conteúdo do repositório
-- src/servicoDePagamento.js - implementação do serviço
-- test/servicoDePagamento.test.js - testes automatizados
-- .github/workflows/ci.yml - pipeline de CI
-- reports/ - relatórios de testes gerados localmente ou em CI
-
-## Conceitos Utilizados
+## Conceitos Aplicados
 
 ### Integração Contínua (CI)
-
-Integração Contínua é uma prática de desenvolvimento que permite executar automaticamente tarefas de validação sempre que alterações são enviadas ao repositório.
+Prática que permite validar automaticamente o código sempre que novas alterações são enviadas ao repositório.
 
 ### GitHub Actions
-
-GitHub Actions é a ferramenta utilizada para automatizar a execução da pipeline.
+Ferramenta utilizada para automatizar a execução da pipeline de Integração Contínua..
 
 ### Testes Automatizados
+Os testes foram implementados utilizando o framework Mocha e são executados automaticamente pela pipeline.
 
-Os testes foram implementados utilizando Mocha e são executados automaticamente pela pipeline.
+### Relatórios de Teste
+Os resultados das execuções são registrados em arquivos HTML e JSON gerados pelo Mochawesome.
 
 ### Artifact
+Os relatórios produzidos são armazenados como artifacts do GitHub Actions, permitindo rastreabilidade, download e consulta posterior dos resultados.
 
-Após a execução dos testes, é gerado um arquivo de relatório que é armazenado na execução da pipeline por meio de artifacts do GitHub Actions.
-NPM TEST
-## Objetivo
 
-Projeto desenvolvido para demonstrar a utilização de GitHub Actions em uma pipeline de Integração Contínua.
 
-## Tecnologias
 
-- JavaScript
-- Node.js
-- Mocha
-- Node Assert
-- GitHub Actions
 
-## Pipeline
 
-A pipeline realiza:
 
-- Execução automática por Push
-- Execução Manual
-- Execução Agendada (Schedule)
-- Execução dos testes automatizados
-- Geração do relatório
-- Publicação do relatório como Artifact
 
-## Estrutura
 
-src/
 
-test/
 
-.github/workflows/
 
-README.md
 
-## Executando localmente
 
-npm install
 
-npm test
 
-## Fluxo da Pipeline
 
-1. Checkout do projeto
-2. Instalação do Node
-3. Instalação das dependências
-4. Execução dos testes
-5. Geração do relatório
-6. Publicação do relatório
 
-Teste execução por push
-Commit xxxxx pushed by Hesdrasgtr
+
+
+
+
+
+
+
+
+
+
+
+
