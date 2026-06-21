@@ -3,7 +3,7 @@ export class ServicoDePagamento {
     constructor() {
         this.pagamentos = [];
     }
-
+    // Teste Git
     // Método para realizar um pagamento
     pagar(codigoBarras, empresa, valor) {
 
