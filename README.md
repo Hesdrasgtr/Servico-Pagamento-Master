@@ -1,3 +1,21 @@
+## Conceitos Utilizados
+
+### Integração Contínua (CI)
+
+Integração Contínua é uma prática de desenvolvimento que permite executar automaticamente tarefas de validação sempre que alterações são enviadas ao repositório.
+
+### GitHub Actions
+
+GitHub Actions é a ferramenta utilizada para automatizar a execução da pipeline.
+
+### Testes Automatizados
+
+Os testes foram implementados utilizando Mocha e são executados automaticamente pela pipeline.
+
+### Artifact
+
+Após a execução dos testes, é gerado um arquivo de relatório que é armazenado na execução da pipeline por meio de artifacts do GitHub Actions.
+
 # Serviço de Pagamento
 
 ## Objetivo
