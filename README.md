@@ -93,33 +93,3 @@ Os resultados das execuções são registrados em arquivos HTML e JSON gerados p
 
 ### Artifact
 Os relatórios produzidos são armazenados como artifacts do GitHub Actions, permitindo rastreabilidade, download e consulta posterior dos resultados.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
