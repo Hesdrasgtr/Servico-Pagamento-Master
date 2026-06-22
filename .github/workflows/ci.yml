@@ -42,3 +42,4 @@ jobs:
           path: |
             mochawesome-report/mochawesome.html
             mochawesome-report/mochawesome.json
+            
