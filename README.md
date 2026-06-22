@@ -19,13 +19,17 @@ Implementar uma pipeline de Integração Contínua capaz de:
 - GitHub Actions
 
 ## Estrutura do Projeto
-src/
-test/
-.github/
-└── workflows/
-    └── ci.yml 
-mochawesome-report/
-README.md
+
+```text
+.
+├── src/
+├── test/
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── mochawesome-report/
+└── README.md
+```
 
 ## Casos de Teste
 Arquivo:
