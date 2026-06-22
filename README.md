@@ -28,6 +28,8 @@ Implementar uma pipeline de Integração Contínua capaz de:
 │   └── workflows/
 │       └── ci.yml
 ├── mochawesome-report/
+├── package.json
+├── package-lock.json
 └── README.md
 ```
 
